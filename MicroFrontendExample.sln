@@ -5,6 +5,12 @@ VisualStudioVersion = 25.0.1705.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroFrontendExample.Shell", "MicroFrontendExample.Shell\MicroFrontendExample.Shell.csproj", "{8D1ABE77-F7E9-4A61-AAE9-616285C28A40}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactMicroFrontend", "ReactMicroFrontend\ReactMicroFrontend.csproj", "{77286492-A8F8-4887-938E-E1E0B1B93F7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorMvc", "BlazorMvc\BlazorMvc.csproj", "{B0FB09C1-77A9-453C-9EFD-D9F2C0C8C442}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWASM", "BlazorWASM\BlazorWASM.csproj", "{F179950A-E0A3-48EE-AB99-B6088229F10F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,22 @@ Global
 		{8D1ABE77-F7E9-4A61-AAE9-616285C28A40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D1ABE77-F7E9-4A61-AAE9-616285C28A40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D1ABE77-F7E9-4A61-AAE9-616285C28A40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77286492-A8F8-4887-938E-E1E0B1B93F7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77286492-A8F8-4887-938E-E1E0B1B93F7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77286492-A8F8-4887-938E-E1E0B1B93F7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77286492-A8F8-4887-938E-E1E0B1B93F7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9736CED-14E5-4C3B-B696-5CD1BFAF6CDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9736CED-14E5-4C3B-B696-5CD1BFAF6CDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9736CED-14E5-4C3B-B696-5CD1BFAF6CDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9736CED-14E5-4C3B-B696-5CD1BFAF6CDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0FB09C1-77A9-453C-9EFD-D9F2C0C8C442}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0FB09C1-77A9-453C-9EFD-D9F2C0C8C442}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0FB09C1-77A9-453C-9EFD-D9F2C0C8C442}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0FB09C1-77A9-453C-9EFD-D9F2C0C8C442}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F179950A-E0A3-48EE-AB99-B6088229F10F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F179950A-E0A3-48EE-AB99-B6088229F10F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F179950A-E0A3-48EE-AB99-B6088229F10F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F179950A-E0A3-48EE-AB99-B6088229F10F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\" />
+    <Content Remove="wwwroot\dist\" />
+    <Content Remove="Index.razor" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+    <Folder Include="src\" />
+    <Folder Include="wwwroot\dist\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\" />
+  </ItemGroup>
+  <Target Name="npm restore" BeforeTargets="BeforeBuild">
+        <Exec Command="npm install" />
+  </Target>
+
+  <Target Name="webpack" AfterTargets="Build">
+      <Exec Command="npm run build" />
+  </Target>
+
+  <Target Name="webpack clean" AfterTargets="Clean" Condition="Exists('node_modules')">
+      <Exec Command="npm run clean" />
+  </Target>
+</Project>

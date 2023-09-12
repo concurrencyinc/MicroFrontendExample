@@ -6,11 +6,40 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
-  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' ">
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' ">
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StaticWebAssetBasePath>FirstApp</StaticWebAssetBasePath>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.5" PrivateAssets="all" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ReactMicroFrontend\ReactMicroFrontend.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\BlazorMvc\BlazorMvc.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\BlazorWASM\BlazorWASM.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+  <Target Name="npm restore" BeforeTargets="BeforeBuild">
+          <Exec Command="npm install" />
+  </Target>
+
+  <Target Name="webpack" AfterTargets="Build">
+      <Exec Command="npm run build" />
+  </Target>
+
+  <Target Name="webpack clean" AfterTargets="Clean" Condition="Exists('node_modules')">
+      <Exec Command="npm run clean" />
+  </Target>
 </Project>

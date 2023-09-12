@@ -1,0 +1,13 @@
+@inherits Palermo.BlazorMvc.ViewComponentBase
+@using MicroFrontendExample.Shell.Models
+
+<div class="user-profile">
+    <h2>User Profile</h2>
+    <p>Name: @User.Name</p>
+    <p>Email: @User.Email</p>
+</div>
+
+@code {
+    [Parameter]
+    public UserModel User { get; set; }
+}
