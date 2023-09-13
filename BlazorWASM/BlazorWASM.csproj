@@ -26,6 +26,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.5" PrivateAssets="all" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MicroFrontendExample.Shell" />
+    <ProjectReference Include="..\MicroFrontendExample.Shell\MicroFrontendExample.Shell.csproj" />
   </ItemGroup>
 </Project>
