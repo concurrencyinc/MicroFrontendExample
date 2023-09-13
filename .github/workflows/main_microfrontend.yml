@@ -24,23 +24,27 @@ jobs:
           include-prerelease: true
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: Install Packages for MicrofrontendExample.Shell
+      - name: Restore Dependencies
+        run: dotnet restore
+
+      - name: Install Packages
         run: npm install
         working-directory: MicroFrontendExample.Shell
 
-      - name: Install Packages for ReactMicroFrontend
+      - name: Install Packages
         run: npm install
         working-directory: ReactMicroFrontend
 
-      - name: Build with dotnet
-        run: dotnet build --configuration Release
+      - name: Build MicroFrontendExample.Shell
+        run: dotnet build MicroFrontendExample.Shell/MicroFrontendExample.Shell.csproj --configuration Release
 
-      - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+      - name: Publish .NET Apps
+        run: |
+          dotnet publish MicroFrontendExample.Shell/MicroFrontendExample.Shell.csproj --configuration Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
