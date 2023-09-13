@@ -13,9 +13,6 @@
     <ExternalConsole>true</ExternalConsole>
   </PropertyGroup>
   <PropertyGroup>
-    <StaticWebAssetBasePath>FirstApp</StaticWebAssetBasePath>
-  </PropertyGroup>
-  <PropertyGroup>
     <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
   </PropertyGroup>
   <ItemGroup>
