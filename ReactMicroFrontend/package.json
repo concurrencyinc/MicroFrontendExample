@@ -7,7 +7,7 @@
     "src/index.jsx"
   ],
   "scripts": {
-    "build": "parcel build src/index.js --dist-dir wwwroot/dist -o app.js",
+    "build": "parcel build src/index.js --dist-dir wwwroot/dist/app.js",
     "clean": "del-cli wwwroot/dist/* node_modules"
   },
   "dependencies": {
