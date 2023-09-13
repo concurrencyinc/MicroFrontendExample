@@ -1,0 +1,58 @@
+name: Build and Deploy MicroFrontendExample
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  DOTNET_VERSION: '7.0.x'
+  NODE_VERSION: '18.x'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+    
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+    
+    - name: Restore Dependencies
+      run: dotnet restore
+    
+    - name: Build MicroFrontendExample.Shell
+      run: dotnet build MicroFrontendExample.Shell/MicroFrontendExample.Shell.csproj --configuration Release
+    
+    - name: Build BlazorWASM
+      run: dotnet build BlazorWASM/BlazorWASM.csproj --configuration Release
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+
+    - name: Install Dependencies
+      run: npm install
+      working-directory: ReactMicroFrontend
+
+    - name: Build ReactMicroFrontend
+      run: npm run build
+      working-directory: ReactMicroFrontend
+
+    - name: Publish .NET Apps
+      run: |
+        dotnet publish MicroFrontendExample.Shell/MicroFrontendExample.Shell.csproj --configuration Release -o ./output/MicroFrontendExample.Shell
+        dotnet publish BlazorWASM/BlazorWASM.csproj --configuration Release -o ./output/BlazorWASM
+
+    - name: Archive Production Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: production-artifacts
+        path: |
+          output/**
+          ReactMicroFrontend/build/**
