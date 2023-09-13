@@ -35,7 +35,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BlazorMVC\BlazorMVC.csproj">
+    <ProjectReference Include="..\BlazorMvc\BlazorMvc.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>
