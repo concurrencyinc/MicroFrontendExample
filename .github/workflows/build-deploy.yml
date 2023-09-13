@@ -6,41 +6,44 @@ on:
       - main
 
 env:
-  DOTNET_VERSION: '7.0.x'
-  NODE_VERSION: '18.x'
+  DOTNET_VERSION: "7.0.x"
+  NODE_VERSION: "18.x"
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v2
-    
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: ${{ env.DOTNET_VERSION }}
+      - name: Checkout Code
+        uses: actions/checkout@v2
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-    
-    - name: Restore Dependencies
-      run: dotnet restore
-    
-    - name: Build MicroFrontendExample.Shell
-      run: dotnet build MicroFrontendExample.Shell/MicroFrontendExample.Shell.csproj --configuration Release
-      
-    - name: Publish .NET Apps
-      run: |
-        dotnet publish MicroFrontendExample.Shell/MicroFrontendExample.Shell.csproj --configuration Release -o ./output/MicroFrontendExample.Shell
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
 
-    - name: Archive Production Artifacts
-      uses: actions/upload-artifact@v2
-      with:
-        name: production-artifacts
-        path: |
-          output/**
-          ReactMicroFrontend/build/**
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Restore Dependencies
+        run: dotnet restore
+
+      - name: Install Packages
+        run: npm install
+
+      - name: Build MicroFrontendExample.Shell
+        run: dotnet build MicroFrontendExample.Shell/MicroFrontendExample.Shell.csproj --configuration Release
+
+      - name: Publish .NET Apps
+        run: |
+          dotnet publish MicroFrontendExample.Shell/MicroFrontendExample.Shell.csproj --configuration Release -o ./output/MicroFrontendExample.Shell
+
+      - name: Archive Production Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: production-artifacts
+          path: |
+            output/**
+            ReactMicroFrontend/build/**
