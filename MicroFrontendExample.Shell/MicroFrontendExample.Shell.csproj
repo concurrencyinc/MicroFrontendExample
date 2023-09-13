@@ -15,19 +15,27 @@
   <PropertyGroup>
     <StaticWebAssetBasePath>FirstApp</StaticWebAssetBasePath>
   </PropertyGroup>
+  <PropertyGroup>
+    <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.5" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Features\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Features\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\ReactMicroFrontend\ReactMicroFrontend.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
-    <ProjectReference Include="..\BlazorMvc\BlazorMvc.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
-    <ProjectReference Include="..\BlazorWASM\BlazorWASM.csproj">
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorMVC\BlazorMVC.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>
