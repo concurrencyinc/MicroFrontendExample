@@ -1,7 +1,7 @@
-using MicroFrontendExample.Shell.Models;
+using BlazorMVCExample.Models;
 using Microsoft.AspNetCore.Components;
 using Palermo.BlazorMvc;
-namespace MicroFrontendExample.Shell.Pages
+namespace BlazorMVCExample.Pages
 {
     [Route("/user-profile")]
     public class UserProfileController : ControllerComponentBase<UserProfileView>

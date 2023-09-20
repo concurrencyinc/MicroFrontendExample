@@ -1,4 +1,4 @@
-namespace MicroFrontendExample.Shell.Models
+namespace BlazorMVCExample.Models
 {
     public class UserModel
     {

@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactMicroFrontend", "React
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorMvc", "BlazorMvc\BlazorMvc.csproj", "{B0FB09C1-77A9-453C-9EFD-D9F2C0C8C442}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWASM", "BlazorWASM\BlazorWASM.csproj", "{D44E5125-02BD-4DB8-9266-DDA419076BE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorMVCExample", "BlazorMVCExample\BlazorMVCExample.csproj", "{A297C354-E3B2-4BCF-B2C2-2A270C923E94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,14 @@ Global
 		{F179950A-E0A3-48EE-AB99-B6088229F10F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F179950A-E0A3-48EE-AB99-B6088229F10F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F179950A-E0A3-48EE-AB99-B6088229F10F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D44E5125-02BD-4DB8-9266-DDA419076BE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D44E5125-02BD-4DB8-9266-DDA419076BE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D44E5125-02BD-4DB8-9266-DDA419076BE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D44E5125-02BD-4DB8-9266-DDA419076BE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A297C354-E3B2-4BCF-B2C2-2A270C923E94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A297C354-E3B2-4BCF-B2C2-2A270C923E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A297C354-E3B2-4BCF-B2C2-2A270C923E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A297C354-E3B2-4BCF-B2C2-2A270C923E94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
